@@ -1,8 +1,8 @@
 import { LoginDialog } from "@/components/layout/dialog/loginDialog";
 
 export const metadata = {
-  title: "Quick3 | Chat",
-  description: "Quick3 Messenger",
+  title: "PunX Chat | Chat",
+  description: "Web3 Messenger",
 };
 
 export default function RootLayout({ children }) {

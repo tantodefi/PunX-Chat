@@ -2,7 +2,7 @@ import AddDialog from "@/components/layout/dialog/addDialog";
 import { LoginDialog } from "@/components/layout/dialog/loginDialog";
 
 export const metadata = {
-  title: "Quick3 | Dashboard",
+  title: "PunX.Chat | Dashboard",
   description: "Quick3 Messenger",
 };
 

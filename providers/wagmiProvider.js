@@ -3,6 +3,7 @@ import { WagmiConfig, createConfig, configureChains, mainnet } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { CoinbaseWalletConnector } from "wagmi/connectors/coinbaseWallet";
+// import { injected } from "wagmi/connectors";
 
 const { chains, publicClient, webSocketPublicClient } = configureChains(
   [mainnet],

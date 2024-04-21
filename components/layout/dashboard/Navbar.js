@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useAccount, useDisconnect } from "wagmi";
 import { useSelector } from "react-redux";
+// import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
 
 export default function Navbar() {
   const { disconnect } = useDisconnect();
@@ -48,7 +49,7 @@ export default function Navbar() {
         </div>
 
         <div className="flex flex-col items-center -ml-16">
-          <h1 className="font-bold text-5xl">Quick3</h1>
+          <h1 className="font-bold text-5xl">PunX.Chat</h1>
         </div>
 
         <Button

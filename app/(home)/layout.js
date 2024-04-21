@@ -1,6 +1,6 @@
 export const metadata = {
-  title: "Quick3 | Connect",
-  description: "Quick3 Messenger",
+  title: "PunX Chat | Connect",
+  description: "web3 Messenger",
 };
 
 export default function RootLayout({ children }) {

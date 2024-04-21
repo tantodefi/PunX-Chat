@@ -11,6 +11,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUser } from "@/redux/slice/pushSlice";
 import { useRouter } from "next/navigation";
 import usePush from "@/hooks/usePush";
+import Image from "next/image";
+import { EthereumWalletConnectors } from "@dynamic-labs/ethereum";
+import { ZeroDevSmartWalletConnectors } from "@dynamic-labs/ethereum-aa";
+import { DynamicContextProvider } from "@dynamic-labs/sdk-react-core";
+import { DynamicWagmiConnector } from "@dynamic-labs/wagmi-connector";
+import { DynamicWidget } from "@dynamic-labs/sdk-react-core";
+import Script from "next/script";
 
 export default function Home() {
   const { connect, connectors } = useConnect();
@@ -23,15 +30,40 @@ export default function Home() {
   const stream = useSelector((state) => state.push.stream);
 
   return (
+    
     <div className="h-screen w-screen flex items-center justify-center bg-black">
       <div className="w-[400px] border-[1px] border-white/30 rounded-3xl flex flex-col items-center p-5 pb-7">
-        <ChatBubbleBottomCenterTextIcon className="h-20 w-20 text-white mb-2" />
-        <h1 className="font-bold text-5xl">Quick3</h1>
-        <h3>Messenger</h3>
+      <Image 
+      src="/tantodefi-upunx.jpg"
+      width={500}
+      height={500}
+      alt="Picture of the author"
+      />
+     
+        <h1 className="font-bold color-white text-5xl">PunX.Chat</h1>
+
 
         {!isConnected && (
           <>
-            <Button
+          <br></br>
+          <DynamicContextProvider
+          settings={{
+            appName: 'web3frens.xyz',
+            // environmentId: "c18a6f71-7c8f-4c03-bb76-292844106dec", // update this ID to yours
+            environmentId: "379215fd-c6ca-42bc-95c2-058a18783900",
+            walletConnectors: [EthereumWalletConnectors, ZeroDevSmartWalletConnectors],
+            // evmNetworks,
+          }}
+        >
+        <DynamicWagmiConnector>
+          <DynamicWidget/>
+        </DynamicWagmiConnector>
+        </DynamicContextProvider>
+        <br></br>
+        <p className="color-white">1. Email Signup.</p>
+        <p className="color-white">2. Link Socials.</p>
+        <p className="color-white">3. Then Connect.</p>
+        <Button
               className="w-full mt-10 rounded-2xl"
               size="lg"
               onClick={() => {
@@ -40,7 +72,7 @@ export default function Home() {
                 });
               }}
             >
-              Metamask
+              Metamask 🦊
             </Button>
             <Button
               className="w-full mt-5 rounded-2xl"
@@ -51,8 +83,20 @@ export default function Home() {
                 });
               }}
             >
-              Coinbase
+              Coinbase 🔵
             </Button>
+            <Button
+            className="w-full mt-5 rounded-2xl"
+            size="lg"
+            // onClick={() => {
+            //   connect({
+            //     connector: connectors[1],
+            //   });
+            // }}
+          >
+          Connect 🆙
+          </Button>
+          <br/>
           </>
         )}
 
